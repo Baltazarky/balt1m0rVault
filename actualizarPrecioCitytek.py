@@ -6,7 +6,6 @@ import os
 # --- 1. CONFIGURACIÓN ---
 URL_PLANILLA = "https://docs.google.com/spreadsheets/d/1PzQZQOuqMEGyGxS1kJVsc5wzH3b7p4HXpbmYIsncX4Q/edit?gid=872154147#gid=872154147"
 NOMBRE_PESTANA = "Lista Precios"
-# Ahora sí, en la raíz del repo
 RUTA_JSON = "precios.json" 
 
 # --- 2. CONEXIÓN CON GOOGLE ---
@@ -25,12 +24,14 @@ print("\n--- LEYENDO EXCEL ---")
 planilla = cliente.open_by_url(URL_PLANILLA)
 hoja = planilla.worksheet(NOMBRE_PESTANA)
 
-# Leemos desde la fila 5 para saltar el banner
 registros_excel = hoja.get_all_records(head=5) 
 print(f"📊 Se leyeron {len(registros_excel)} filas del Excel (después del banner).")
 
 precios_actualizados = {}
-for fila in registros_excel:
+for fila_cruda in registros_excel:
+    # MAGIA ACÁ: Limpiamos los nombres de las columnas por si tienen espacios ocultos
+    fila = {str(k).strip(): v for k, v in fila_cruda.items()}
+    
     cod = str(fila.get("Cod", "")).strip().upper() 
     precio_efvo = str(fila.get("Precio efvo", "")).strip()
     precio_lista = str(fila.get("Precio de lista", "")).strip()
@@ -42,10 +43,10 @@ for fila in registros_excel:
         }
 
 print(f"✅ Se guardaron {len(precios_actualizados)} SKUs válidos en memoria.")
-if "PS5-BLUE" in precios_actualizados:
-    print(f"🎯 DEBUG: Encontré PS5-BLUE en el Excel. Precio efvo: {precios_actualizados['PS5-BLUE']['efectivo']}")
-else:
-    print(f"⚠️ DEBUG: ¡ATENCIÓN! No encontré PS5-BLUE en la columna 'Cod' del Excel.")
+
+# Pequeño chequeo para ver si agarró la bici
+if "ZLBIKEGREY" in precios_actualizados:
+    print(f"🎯 DEBUG: ¡Encontré ZLBIKEGREY en el Excel! Precio efvo: {precios_actualizados['ZLBIKEGREY']['efectivo']}")
 
 # --- 4. ACTUALIZACIÓN DEL JSON EXISTENTE ---
 print(f"\n--- LEYENDO JSON LOCAL: {RUTA_JSON} ---")
@@ -64,7 +65,6 @@ for id_producto, datos in base_datos_json.items():
     cod_json = str(datos.get("Cod", "")).strip().upper()
     
     if not cod_json:
-        print(f"  -> ⏭️ IGNORADO: El producto '{datos.get('nombre', id_producto)}' no tiene 'Cod' en el JSON.")
         continue
         
     if cod_json in precios_actualizados:
@@ -82,8 +82,6 @@ for id_producto, datos in base_datos_json.items():
             productos_actualizados += 1
         else:
             print(f"  -> ➖ SIN CAMBIOS para [{cod_json}]: Ya tiene el precio {precio_viejo}")
-    else:
-        print(f"  -> ⚠️ NO ENCONTRADO EN EXCEL: El SKU '[{cod_json}]' está en el JSON pero no en la planilla.")
 
 # --- 5. GUARDAR EL JSON SOBRESCRITO ---
 print(f"\n--- GUARDANDO CAMBIOS ---")
