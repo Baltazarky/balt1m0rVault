@@ -4,7 +4,7 @@ import json
 import os
 
 # --- 1. CONFIGURACIÓN ---
-URL_PLANILLA = "https://docs.google.com/spreadsheets/d/1S_2JtZrqDW6q_rXA80jPyGWdotI5ar3o/edit?gid=872154147#gid=872154147"
+URL_PLANILLA = "https://docs.google.com/spreadsheets/d/1PzQZQOuqMEGyGxS1kJVsc5wzH3b7p4HXpbmYIsncX4Q/edit?gid=872154147#gid=872154147"
 NOMBRE_PESTANA = "Lista Precios"
 # Ruta de tu archivo en el repositorio (ajustá si está en alguna carpeta)
 RUTA_JSON = "precios.json" 
