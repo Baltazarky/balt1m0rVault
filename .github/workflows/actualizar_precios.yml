@@ -1,0 +1,39 @@
+name: Actualizar Precios CityTek
+
+on:
+  schedule:
+    # Esto hace que corra todos los días a las 3:00 AM UTC (12:00 AM en Argentina)
+    - cron: '0 3 * * *' 
+  workflow_dispatch: # Esto te agrega un botón para poder correrlo manualmente cuando quieras
+
+jobs:
+  actualizar:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # Le damos permiso al bot para modificar tu repositorio
+
+    steps:
+    - name: Clonar el repositorio
+      uses: actions/checkout@v4
+
+    - name: Configurar entorno Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.12'
+
+    - name: Instalar librerías necesarias
+      run: pip install gspread oauth2client
+
+    - name: Ejecutar script de actualización
+      env:
+        GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}
+      run: python actualizarPrecioCitytek.py
+
+    - name: Guardar cambios en el JSON (Commit y Push)
+      run: |
+        git config --global user.name "GitHub Actions Bot"
+        git config --global user.email "actions@github.com"
+        git add precios.json
+        # Si no hubo cambios en los precios, el bot no hace nada y no da error
+        git commit -m "🤖 Actualización automática de precios desde Google Sheets" || echo "No hay cambios para guardar"
+        git push
