@@ -682,5 +682,89 @@
     "mensajeWsp": "Hola CityTek! Quiero aprovechar el precio al contado por el Tostadora Atma 700W.",
     "Cod": "94TO20BP",
     "Precio6Cuotas": "4999"
+  },
+  "332770801": {
+    "nombre": "Oferta de Limpieza Imperdible",
+    "precioContado": "$114.000,00",
+    "urlProducto": "https://citytek.com.ar/productos/oferta-de-limpieza-imperdible/",
+    "mensajeWsp": "¡Hola! Me interesa comprar el Oferta de Limpieza Imperdible (CITYCOMBO-001) al contado.",
+    "Cod": "CITYCOMBO-001"
+  },
+  "332770805": {
+    "nombre": "Combo Lectura Imperdible",
+    "precioContado": "$334.000,00",
+    "urlProducto": "https://citytek.com.ar/productos/combo-lectura-imperdible/",
+    "mensajeWsp": "¡Hola! Me interesa comprar el Combo Lectura Imperdible (CITYCOMBO-002) al contado.",
+    "Cod": "CITYCOMBO-002"
+  },
+  "332770808": {
+    "nombre": "Combo Cardio Imperdible",
+    "precioContado": "$293.000,00",
+    "urlProducto": "https://citytek.com.ar/productos/combo-cardio-imperdible/",
+    "mensajeWsp": "¡Hola! Me interesa comprar el Combo Cardio Imperdible (CITYCOMBO-003) al contado.",
+    "Cod": "CITYCOMBO-003"
+  },
+  "332770811": {
+    "nombre": "Combo Gamer Imperdible",
+    "precioContado": "$154.000,00",
+    "urlProducto": "https://citytek.com.ar/productos/combo-gamer-imperdible/",
+    "mensajeWsp": "¡Hola! Me interesa comprar el Combo Gamer Imperdible (CITYCOMBO-004) al contado.",
+    "Cod": "CITYCOMBO-004"
+  },
+  "332770814": {
+    "nombre": "Combo Mundial 1 Imperdible",
+    "precioContado": "$824.000,00",
+    "urlProducto": "https://citytek.com.ar/productos/combo-mundial-1-imperdible/",
+    "mensajeWsp": "¡Hola! Me interesa comprar el Combo Mundial 1 Imperdible (CITYCOMBO-005) al contado.",
+    "Cod": "CITYCOMBO-005"
+  },
+  "332770816": {
+    "nombre": "Combo Mundial 2 Imperdible",
+    "precioContado": "$824.000,00",
+    "urlProducto": "https://citytek.com.ar/productos/combo-mundial-2-imperdible/",
+    "mensajeWsp": "¡Hola! Me interesa comprar el Combo Mundial 2 Imperdible (CITYCOMBO-006) al contado.",
+    "Cod": "CITYCOMBO-006"
+  },
+  "332770819": {
+    "nombre": "Combo Mundial Imperdible",
+    "precioContado": "$542.000,00",
+    "urlProducto": "https://citytek.com.ar/productos/combo-mundial-imperdible/",
+    "mensajeWsp": "¡Hola! Me interesa comprar el Combo Mundial Imperdible (CITYCOMBO-007) al contado.",
+    "Cod": "CITYCOMBO-007"
+  },
+  "332770821": {
+    "nombre": "Combo imperdible para estilismo",
+    "precioContado": "$94.000,00",
+    "urlProducto": "https://citytek.com.ar/productos/combo-imperdible-para-estilismo/",
+    "mensajeWsp": "¡Hola! Me interesa comprar el Combo imperdible para estilismo (CITYCOMBO-008) al contado.",
+    "Cod": "CITYCOMBO-008"
+  },
+  "332770823": {
+    "nombre": "Combo Estilista 2 Imperdible",
+    "precioContado": "$94.000,00",
+    "urlProducto": "https://citytek.com.ar/productos/combo-estilista-2-imperdible/",
+    "mensajeWsp": "¡Hola! Me interesa comprar el Combo Estilista 2 Imperdible (CITYCOMBO-009) al contado.",
+    "Cod": "CITYCOMBO-009"
+  },
+  "332770828": {
+    "nombre": "Combo Confort Imperdible",
+    "precioContado": "$929.000,00",
+    "urlProducto": "https://citytek.com.ar/productos/combo-confort-imperdible/",
+    "mensajeWsp": "¡Hola! Me interesa comprar el Combo Confort Imperdible (CITYCOMBO-010) al contado.",
+    "Cod": "CITYCOMBO-010"
+  },
+  "332770831": {
+    "nombre": "Combo de Oficina Imperdible",
+    "precioContado": "$700.000,00",
+    "urlProducto": "https://citytek.com.ar/productos/combo-de-oficina-imperdible/",
+    "mensajeWsp": "¡Hola! Me interesa comprar el Combo de Oficina Imperdible (CITYCOMBO-011) al contado.",
+    "Cod": "CITYCOMBO-011"
+  },
+  "332770833": {
+    "nombre": "Combo Mundialista TV + Parlante",
+    "precioContado": "$349.000,00",
+    "urlProducto": "https://citytek.com.ar/productos/combo-mundialista-tv-parlante/",
+    "mensajeWsp": "¡Hola! Me interesa comprar el Combo Mundialista TV + Parlante (CITYCOMBO-012) al contado.",
+    "Cod": "CITYCOMBO-012"
   }
 }
